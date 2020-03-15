@@ -2,7 +2,7 @@
 
 ## How to use
 
-Install the tool at first:
+Install the tool at first [Nuget](https://www.nuget.org/packages/sqlite-exec/):
 ```
 dotnet tool install --global sqlite-exec
 ```
