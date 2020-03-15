@@ -4,7 +4,7 @@
 
 Install the tool at first:
 ```
-dotnet tool install --global sqlite-exec --version 0.0.1
+dotnet tool install --global sqlite-exec
 ```
 Then you can use `sqlite-exec` command to execute the scripts
 ```
