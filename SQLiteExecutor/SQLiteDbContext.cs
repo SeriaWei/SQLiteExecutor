@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SQLiteExecutor
 {
-    public class SQLiteDbContext : DbContext
+    internal class SQLiteDbContext : DbContext
     {
         public SQLiteDbContext(string dbFile)
         {
