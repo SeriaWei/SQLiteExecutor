@@ -12,7 +12,8 @@ namespace SQLiteExecutor
     {
         public ScriptExcutor(string databaseFile, List<string> scripts)
         {
-
+            DatabaseFile = databaseFile;
+            Scripts = scripts;
         }
         public string DatabaseFile { get; set; }
         public List<string> Scripts { get; set; }
@@ -51,10 +52,8 @@ namespace SQLiteExecutor
                     }
                     finally
                     {
-                        if (connection.State == ConnectionState.Open)
-                        {
-                            connection.Close();
-                        }
+                        connection.Close();
+                        connection.Dispose();
                     }
                 }
             }

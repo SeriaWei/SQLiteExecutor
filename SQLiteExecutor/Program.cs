@@ -20,6 +20,9 @@ namespace SQLiteExecutor
         public string File { get; set; }
         [Option(Description = "Get all *.sqlite files from working directory if [database] is not specified.")]
         public string Database { get; set; }
+
+        [Option(Description = "Get all *.sqlite files from directory.")]
+        public string Path { get; set; }
         private int OnExecute()
         {
             if (string.IsNullOrEmpty(File))
@@ -33,6 +36,13 @@ namespace SQLiteExecutor
             {
                 new ScriptExcutor(Database, scripts).Execute();
             }
+            else if (!string.IsNullOrEmpty(Path))
+            {
+                foreach (var item in System.IO.Directory.GetFiles(Path, "*.sqlite"))
+                {
+                    new ScriptExcutor(item, scripts).Execute();
+                }
+            }
             else
             {
                 foreach (var item in System.IO.Directory.GetFiles(System.IO.Directory.GetCurrentDirectory(), "*.sqlite"))
@@ -42,7 +52,7 @@ namespace SQLiteExecutor
             }
             return 0;
         }
-        
-        
+
+
     }
 }
