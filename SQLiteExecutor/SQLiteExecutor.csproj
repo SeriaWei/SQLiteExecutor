@@ -6,7 +6,7 @@
     
     <ToolCommandName>sqlite-exec</ToolCommandName>
     <PackageId>sqlite-exec</PackageId>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageVersion>1.0.2</PackageVersion>
     <Authors>ZKEASOFT</Authors>
     <Description>Execute script</Description>
 

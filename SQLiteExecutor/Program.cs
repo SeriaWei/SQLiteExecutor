@@ -25,7 +25,6 @@ namespace SQLiteExecutor
         public string Path { get; set; }
         private int OnExecute()
         {
-            File = "D:\\Projects\\ZKEACMS\\Database\\Update\\3.7\\Sqlite.sql";
             if (string.IsNullOrEmpty(File))
             {
                 Console.WriteLine("Script file not found.");
