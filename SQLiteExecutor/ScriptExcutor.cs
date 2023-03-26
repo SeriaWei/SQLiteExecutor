@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -18,17 +17,13 @@ namespace SQLiteExecutor
         public string DatabaseFile { get; set; }
         public List<string> Scripts { get; set; }
 
-
         public void Execute()
         {
             Console.WriteLine("Executing scripts to: {0}", DatabaseFile);
             DateTime start = DateTime.Now;
-            using (SQLiteDbContext dbContext = new SQLiteDbContext(DatabaseFile))
+            using (var connection = new SQLiteDbContext(DatabaseFile).GetDbConnection())
             {
-                var connection = dbContext.Database.GetDbConnection();
-                if (connection.State != ConnectionState.Open)
-                    connection.Open();
-
+                connection.Open();
                 using (var transaction = connection.BeginTransaction())
                 {
                     try
@@ -50,12 +45,8 @@ namespace SQLiteExecutor
                         transaction.Rollback();
                         throw;
                     }
-                    finally
-                    {
-                        connection.Close();
-                        connection.Dispose();
-                    }
                 }
+                connection.Close();
             }
         }
     }
