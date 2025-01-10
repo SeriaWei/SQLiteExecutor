@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>net7.0;net8.0;net9.0</TargetFrameworks>
 
 		<ToolCommandName>sqlite-exec</ToolCommandName>
 		<PackageId>sqlite-exec</PackageId>
@@ -25,8 +25,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.0" />
-		<PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" />
+		<PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1" />
+		<PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
