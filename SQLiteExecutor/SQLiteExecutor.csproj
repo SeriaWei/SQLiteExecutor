@@ -6,13 +6,13 @@
 
 		<ToolCommandName>sqlite-exec</ToolCommandName>
 		<PackageId>sqlite-exec</PackageId>
-		<PackageVersion>1.1</PackageVersion>
+		<PackageVersion>1.2</PackageVersion>
 		<Authors>ZKEASOFT</Authors>
 		<Description>Execute script</Description>
 
 		<PackAsTool>True</PackAsTool>
 		<!--<GeneratePackageOnBuild>True</GeneratePackageOnBuild>-->
-		<Version>1.0.1</Version>
+		<Version>1.2</Version>
 		<Copyright>ZKEASOFT</Copyright>
 		<PackageProjectUrl>https://www.zkea.net</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SeriaWei/SQLiteExecutor</RepositoryUrl>
@@ -26,7 +26,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1" />
-		<PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
